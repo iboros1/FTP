@@ -11,7 +11,6 @@ CamFolderList = []
 SelectedFolder = 1
 FolderContent = []
 
-
 ftp = FTP(ip)   # connect to host, default port
 print('Current ip is ' + ip + ':' + port)
 ftp.login(user, password)               # user anonymous, passwd anonymous@
