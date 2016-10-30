@@ -6,7 +6,7 @@ port = '21'
 ip = '192.168.1.1'
 user = raw_input('User:')
 password = raw_input('Password:')
-CameraRoot = "/Free4All/Camera/"
+CameraRoot = []
 CamFolderList = []
 SelectedFolder = 1  # "0" folder 1 , "1" folder Home  , "2" folder Pata
 FolderContent = []
@@ -18,8 +18,11 @@ ftp.login(user, password)               # user anonymous, passwd anonymous@
 ftp.retrlines('LIST')     # list directory contents
 
 # go to Camera Root Folder
+Root = ftp.nlst()
+ftp.cwd(Root[1])  # "1" Free4All folder
+MainFolder = ftp.nlst()
+CameraRoot = MainFolder[0]  # "0" Camera Folder
 ftp.cwd(CameraRoot)
-print(ftp.pwd())
 
 #Create list from cam folders
 CamFolderList = ftp.nlst()
