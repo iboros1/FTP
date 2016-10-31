@@ -1,21 +1,19 @@
 from ftplib import FTP
-import os, time
 from pip._vendor.distlib.compat import raw_input
 
-port = '21'
-ip = '192.168.1.1'
+port = 'Default'
+host = '192.168.1.1'
 user = raw_input('User:')
 password = raw_input('Password:')
-CameraRoot = []
+
 CamFolderList = []
 SelectedFolder = 1  # "0" folder 1 , "1" folder Home  , "2" folder Pata
 FolderContent = []
 
-ftp = FTP(ip)   # connect to host, default port
-print('Current ip is ' + ip + ':' + port)
-ftp.login(user, password)               # user anonymous, passwd anonymous@
-
+ftp = FTP(host=host, user=user, passwd=password, timeout=20)   # connect to host, default port
+print('Current ip is ' + host + ':' + port)
 ftp.retrlines('LIST')     # list directory contents
+
 
 # go to Camera Root Folder
 Root = ftp.nlst()
@@ -36,16 +34,7 @@ print(ftp.pwd())
 FolderContent = ftp.nlst()
 print('Files in folder: ' + str(len(FolderContent)))
 
-#ftp.delete(FolderContent[0])
+ftp.delete(FolderContent[0])
 
-now = time.time()
-vdir = "/Home"
-for f in os.listdir(vdir):
-    if os.stat(f).st_mtime < now - 7 * 86400:
-        if os.vdir.isfile(f):
-            os.remove(os.vdir.join(CamFolderList[SelectedFolder], f))
-            print("Deteted Some files")
-else:
-    print("---------" + ftp.pwd())
 
 ftp.quit()
