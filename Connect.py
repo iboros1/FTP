@@ -18,20 +18,29 @@ print("Display Folder List" + str(CamFolderList))
 
 # Go to Cam folder "Home"
 # ftp.cwd(CamFolderList[SelectedFolder])
-# print(ftp.pwd())
-
+print(ftp.pwd())
+ftp.size("/Home")
 for Folders in CamFolderList:
     ftp.cwd(Folders)
-    files = []
-    try:
-        files = ftp.nlst()
-    except ftplib.all_errors:
-        print(ftplib.all_errors)
-    else:
-        print("tesst" + str(ftplib.all_errors) + str(ftp.pwd()))
+    print(Folders)
 
 
-   # print("test    ------" + str(ftp.nlst()))
+
+
+
+
+
+    # files = []
+    # try:
+    #     files = ftp.nlst()
+    #     print(ftp.size(str(files)))
+    # except ftplib.all_errors:
+    #     print(ftplib.all_errors)
+    # else:
+    #     print("tesst" + str(ftplib.all_errors) + str(ftp.pwd()))
+
+
+    # print("test    ------" + str(ftp.nlst()))
     # ftp.retrlines('LIST')  # create list with selected folder content
 # FolderContent = ftp.nlst()
 # print('Files in folder: ' + str(len(FolderContent)))
