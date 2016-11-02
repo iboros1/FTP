@@ -1,29 +1,41 @@
 from ftplib import FTP
-import config
+from config import *
+import ftplib
 
-ftp = FTP(host=config.host, user=config.user, passwd=config.password, timeout=20)  # connect to host, default port
-print('Current ip is ' + config.host + ':' + config.port)
+ftp = FTP(host=Host, user=User, passwd=Password, timeout=20)  # connect to host, default port
+print('Current ip is ' + Host + ':' + Port + "\n" + ftp.getwelcome())
 ftp.retrlines('LIST')  # list directory contents
 
+# enable Debuging
+ftp.set_debuglevel(0)
+
 # go to Camera Root Folder
-Root = ftp.nlst()
-ftp.cwd(Root[1])  # "1" Free4All folder
-MainFolder = ftp.nlst()
-CameraRoot = MainFolder[0]  # "0" Camera Folder
 ftp.cwd(CameraRoot)
 
 # Create list from cam folders
 CamFolderList = ftp.nlst()
-print(CamFolderList)
+print("Display Folder List" + str(CamFolderList))
 
 # Go to Cam folder "Home"
-ftp.cwd(CamFolderList[config.SelectedFolder])
-print(ftp.pwd())
+# ftp.cwd(CamFolderList[SelectedFolder])
+# print(ftp.pwd())
 
-# create list with selected folder content
-FolderContent = ftp.nlst()
-print('Files in folder: ' + str(len(FolderContent)))
+for Folders in CamFolderList:
+    ftp.cwd(Folders)
+    files = []
+    try:
+        files = ftp.nlst()
+    except ftplib.all_errors:
+        print(ftplib.all_errors)
+    else:
+        print("tesst" + str(ftplib.all_errors) + str(ftp.pwd()))
 
-ftp.delete(FolderContent[0])
+
+   # print("test    ------" + str(ftp.nlst()))
+    # ftp.retrlines('LIST')  # create list with selected folder content
+# FolderContent = ftp.nlst()
+# print('Files in folder: ' + str(len(FolderContent)))
+
+# ftp.delete(FolderContent[0])
 
 ftp.quit()
