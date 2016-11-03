@@ -19,10 +19,12 @@ print("Display Folder List" + str(CamFolderList))
 # Go to Cam folder "Home"
 # ftp.cwd(CamFolderList[SelectedFolder])
 print(ftp.pwd())
-ftp.size("/Home")
-for Folders in CamFolderList:
-    ftp.cwd(Folders)
+
+for List in CamFolderList:
+    ftp.cwd(List)
+    Folders.append(List)
     print(Folders)
+    print("current folder is " + str(ftp.pwd()))
 
 
 
