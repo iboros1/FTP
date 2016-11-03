@@ -1,6 +1,6 @@
-from ftplib import FTP
+from Actions import *
 from config import *
-import ftplib
+from ftplib import FTP
 
 ftp = FTP(host=Host, user=User, passwd=Password, timeout=20)  # connect to host, default port
 print('Current ip is ' + Host + ':' + Port + "\n" + ftp.getwelcome())
@@ -16,15 +16,7 @@ ftp.cwd(CameraRoot)
 CamFolderList = ftp.nlst()
 print("Display Folder List" + str(CamFolderList))
 
-# Go to Cam folder "Home"
-# ftp.cwd(CamFolderList[SelectedFolder])
-print(ftp.pwd())
-
-for List in CamFolderList:
-    ftp.cwd(List)
-    Folders.append(List)
-    print(Folders)
-    print("current folder is " + str(ftp.pwd()))
+print(create_folder_list)
 
 
 
@@ -32,18 +24,23 @@ for List in CamFolderList:
 
 
 
-    # files = []
-    # try:
-    #     files = ftp.nlst()
-    #     print(ftp.size(str(files)))
-    # except ftplib.all_errors:
-    #     print(ftplib.all_errors)
-    # else:
-    #     print("tesst" + str(ftplib.all_errors) + str(ftp.pwd()))
 
 
-    # print("test    ------" + str(ftp.nlst()))
-    # ftp.retrlines('LIST')  # create list with selected folder content
+
+        # files = []
+        # try:
+        #     files = ftp.nlst()
+        #     print(ftp.size(str(files)))
+        # except ftplib.all_errors:
+        #     print(ftplib.all_errors)
+        # else:
+        #     print("tesst" + str(ftplib.all_errors) + str(ftp.pwd()))
+
+
+        # print("test    ------" + str(ftp.nlst()))
+        # ftp.retrlines('LIST')  # create list with selected folder content
+
+
 # FolderContent = ftp.nlst()
 # print('Files in folder: ' + str(len(FolderContent)))
 
