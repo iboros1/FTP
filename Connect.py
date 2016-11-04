@@ -1,6 +1,7 @@
 from Actions import *
 from config import *
 from ftplib import FTP
+import ftplib
 
 ftp = FTP(host=Host, user=User, passwd=Password, timeout=20)  # connect to host, default port
 print('Current ip is ' + Host + ':' + Port + "\n" + ftp.getwelcome())
@@ -13,10 +14,24 @@ ftp.set_debuglevel(0)
 ftp.cwd(CameraRoot)
 
 # Create list from cam folders
-CamFolderList = ftp.nlst()
-print("Display Folder List" + str(CamFolderList))
+cam_folder_list = ftp.nlst()
+print("Display Folder List" + str(cam_folder_list))
 
-print(create_folder_list)
+for List in cam_folder_list:
+    try:
+        ftp.dir(List)
+    except ftplib.all_errors:
+        print(ftplib.all_errors)
+    else:
+        images = []
+        ftp.retrlines('LIST', images.append)
+        jpg = 0
+        for jpg in images:
+            print("1")
+
+
+
+
 
 
 
@@ -39,7 +54,6 @@ print(create_folder_list)
 
         # print("test    ------" + str(ftp.nlst()))
         # ftp.retrlines('LIST')  # create list with selected folder content
-
 
 # FolderContent = ftp.nlst()
 # print('Files in folder: ' + str(len(FolderContent)))
