@@ -18,16 +18,18 @@ cam_folder_list = ftp.nlst()
 print("Display Folder List" + str(cam_folder_list))
 
 for List in cam_folder_list:
+    ftp.cwd(List)
     try:
-        ftp.dir(List)
+        r = ftp.dir()
     except ftplib.all_errors:
         print(ftplib.all_errors)
+
     else:
-        images = []
-        ftp.retrlines('LIST', images.append)
-        jpg = 0
-        for jpg in images:
-            print("1")
+        print(r)
+        if r == "None":
+            print(r)
+        else:
+            print("text")
 
 
 
@@ -53,9 +55,7 @@ for List in cam_folder_list:
 
 
         # print("test    ------" + str(ftp.nlst()))
-        # ftp.retrlines('LIST')  # create list with selected folder content
-
-# FolderContent = ftp.nlst()
+        # ftp.retrlines('LIST')  # create list with selected folder content  # FolderContent = ftp.nlst()
 # print('Files in folder: ' + str(len(FolderContent)))
 
 # ftp.delete(FolderContent[0])
