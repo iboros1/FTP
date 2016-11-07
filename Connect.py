@@ -37,13 +37,6 @@ for List in cam_folder_list:
 
 
 
-
-
-
-
-
-
-
         # files = []
         # try:
         #     files = ftp.nlst()
