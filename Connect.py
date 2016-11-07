@@ -17,17 +17,23 @@ ftp.cwd(CameraRoot)
 cam_folder_list = ftp.nlst()
 print("Display Folder List" + str(cam_folder_list))
 
+# Go go through  all folders from "cam_folder_list"
 for List in cam_folder_list:
     ftp.cwd(List)
-    print(ftp.pwd())
+    print("Current Folder is: " + str(ftp.pwd()))
+
+    # If Folder is empty Print Else
+    # if folder
     x = ftp.nlst()
     if x != []:
         for List in x:
             try:
                 ftp.cwd(List)
                 print(List)
-            except ftplib.all_errors:
-                print(ftplib.all_errors)
+            except:
+                a = 1
+            print("Nincs")
+
     else:
         print("Goooooool")
 
