@@ -8,7 +8,7 @@ print('Current ip is ' + Host + ':' + Port + "\n" + ftp.getwelcome())
 ftp.retrlines('LIST')  # list directory contents
 
 # enable Debuging
-ftp.set_debuglevel(0)
+ftp.set_debuglevel(1)
 
 # go to Camera Root Folder
 ftp.cwd(CameraRoot)
@@ -25,9 +25,8 @@ for List in cam_folder_list:
         print(ftplib.all_errors)
 
     else:
-        print(r)
-        if r == "None":
-            print(r)
+        if str(r) == "None":
+            print("status" + str(ftp.pwd()))
         else:
             print("text")
 
