@@ -16,7 +16,7 @@ ftp.cwd(CameraRoot)
 # Create list from cam folders
 cam_folder_list = ftp.nlst()
 print("Display Folder List" + str(cam_folder_list))
-
+a = 1
 # Go go through  all folders from "cam_folder_list"
 for List in cam_folder_list:
     ftp.cwd(List)
@@ -25,37 +25,17 @@ for List in cam_folder_list:
     # If Folder is empty Print Else
     # if folder
     x = ftp.nlst()
-    if x != []:
-        for List in x:
+    if x:
+        for sub_List in x:
             try:
-                ftp.cwd(List)
-                print(List)
+                ftp.cwd(sub_List)
+                print(sub_List)
             except:
-                a = 1
-            print("Nincs")
-
+                a += 1
     else:
         print("Goooooool")
 
-
-
-
-
-
-
-        # files = []
-        # try:
-        #     files = ftp.nlst()
-        #     print(ftp.size(str(files)))
-        # except ftplib.all_errors:
-        #     print(ftplib.all_errors)
-        # else:
-        #     print("tesst" + str(ftplib.all_errors) + str(ftp.pwd()))
-
-
-        # print("test    ------" + str(ftp.nlst()))
-        # ftp.retrlines('LIST')  # create list with selected folder content  # FolderContent = ftp.nlst()
-# print('Files in folder: ' + str(len(FolderContent)))
+print(a)
 
 # ftp.delete(FolderContent[0])
 
