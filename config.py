@@ -1,5 +1,10 @@
 from pip._vendor.distlib.compat import raw_input
 
+
+#ftp = RunFtp()
+# enable Debuging
+
+
 # [Login Info]
 
 Port = 'Default'
