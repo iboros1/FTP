@@ -4,7 +4,7 @@ from pip._vendor.distlib.compat import raw_input
 
 port = '21'
 ip = '192.168.1.1'
-user = ''
+user = 'sdfsdf'
 password = ''
 CameraRoot = []
 CamFolderList = []

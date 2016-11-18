@@ -1,6 +1,6 @@
 from config import *
 from LibraryToDo import RunFtp
-import time
+import os, time
 
 
 
@@ -20,8 +20,8 @@ nr_of_images_in_root = 1
 
 log.write("\n \n \n \n ")
 log.write("Time: " + time.strftime("%c") + "\n \n \n")
-quite_old = time.time() - 1*86400 # seven days
 
+now = time.time()
 
 # Go go through  all folders from "cam_folder_list"
 for List in cam_folder_list:
@@ -36,8 +36,13 @@ for List in cam_folder_list:
                 ftp.cwd(sub_List)
                 #print(ftp.pwd())
                 log.write("\n \n " + "Present Working directory: " + str(ftp.pwd()) + "\n \n \n")
-                for date_folder in ftp.nlst():
-                    log.write(date_folder + "\n")
+                for images in ftp.nlst():
+                    log.write(images + "\n")
+                    print(ftp.dir())
+                    if os.stat(images).st_mtime < now - 7 * 86400:
+                        if os.path.isfile(images):
+                            print("time")
+
             except:
                 nr_of_images_in_root += 1
     else:
