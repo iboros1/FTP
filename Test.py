@@ -1,26 +1,16 @@
 from ftplib import FTP
-import os, time
+import os, datetime, time
 from pip._vendor.distlib.compat import raw_input
+now = datetime.date.strftime(datetime.datetime.today(), '%Y%d%m%H%M%S')
+now = int(now)
+date = now - 2 * 86400
 
-port = '21'
-ip = '192.168.1.1'
-user = 'sdfsdf'
-password = ''
-CameraRoot = []
-CamFolderList = []
-SelectedFolder = 1  # "0" folder 1 , "1" folder Home  , "2" folder Pata
-FolderContent = []
+ftp = FTP(host='192.168.1.1', user='xxxxxxx', passwd='xxxxxxx')
+print(ftp.getwelcome())
+ftp.cwd("/Free4All/Camera/Home/20161102")
+images = ftp.sendcmd('MDTM ' + 'DCS-930L2016110221472501.jpg')
+images = int(images[3:])
+if images < date:
+        print("time")
 
-ftp = FTP(ip)   # connect to host, default port
-print('Current ip is ' + ip + ':' + port)
-ftp.login(user, password)               # user anonymous, passwd anonymous@
-
-ftp.retrlines('LIST')     # list directory contents
-
-# go to Camera Root Folder
-Root = ftp.nlst()
-ftp.cwd(Root[1])
-MainFolder = ftp.nlst()
-CameraRoot = MainFolder[0]
-ftp.cwd(CameraRoot)
-
+ftp.close()
