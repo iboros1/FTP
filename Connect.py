@@ -6,7 +6,7 @@ import os, time
 
 runner = RunFtp()
 runner.login()
-log = open('log.txt', 'a')
+log = open('log.txt', 'a') # When "a" Append to log.txt , if "w" delete all and add
 
 ftp = runner.get_ftp_connection()
 # go to Camera Root Folder
@@ -36,12 +36,10 @@ for List in cam_folder_list:
                 ftp.cwd(sub_List)
                 #print(ftp.pwd())
                 log.write("\n \n " + "Present Working directory: " + str(ftp.pwd()) + "\n \n \n")
-                for images in ftp.nlst():
-                    log.write(images + "\n")
-                    print(ftp.dir())
-                    if os.stat(images).st_mtime < now - 7 * 86400:
-                        if os.path.isfile(images):
-                            print("time")
+                #print(ftp.retrlines('LIST'))
+                for image in ftp.nlst():
+                    log.write(image + "\n")
+                    runner.older_file_delete(image)
 
             except:
                 nr_of_images_in_root += 1

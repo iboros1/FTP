@@ -14,8 +14,8 @@ Password = raw_input('Password:')
 
 # [Folder List]
 CameraRoot = '/Free4All/Camera/'
-SelectedFolder = 1  # "0" folder 1 , "1" folder Home  , "2" folder Pata
-Folders = []
 
-# [Folder list placeholder]
-FolderContent = []
+
+# [Delete files older then ]
+
+DDay = 20

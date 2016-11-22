@@ -1,6 +1,7 @@
-from config import (Host, User, Password, Port)
+from config import (Host, User, Password, Port, DDay)
 from ftplib import FTP
 import datetime
+import os
 
 
 class RunFtp:
@@ -18,22 +19,20 @@ class RunFtp:
     def get_current_folders_list(self):
         # Create list from cam folders
         return self.ftp.nlst()
-    def delete(target):
+
+    def delete_file(self, target):
         self.ftp.delete(target)
 
-    def if_date_date_older(image):
-        now = datetime.datetime.now()
-        target_date = datetime.timedelta(days=20)
-        date = now - target_date
-        date = int('{0}{1}{2}{3}{4}{5}'.format(now.year, now.month, now.day, now.hour, now.minute, now.second))
-        ftp = FTP(host='boros.ddns.net', user='xxxxxxx', passwd='xxxxxxx')
-        print(ftp.getwelcome())
-        ftp.cwd("/Free4All/Camera/Home/20161102")
-        image_date = ftp.sendcmd('MDTM ' + image)
-        image_date = int(image_date[3:])
-        print(image_date)
-        print(date)
+    def older_file_delete(self, image):
+        # Delete Filers older then "DDay" from Config.py
+        date = datetime.datetime.now() - datetime.timedelta(days=DDay)
+        #date = int('{0}{1}{2}{3}{4}{5}'.format(date.year, date.month, date.day, date.hour, date.minute, date.second))
+        date = int('%s%02d%02d%02d%02d%02d' % (date.year, date.month, date.day, date.hour, date.minute, date.second))
+        image = os.path.basename(image) # Remove folders from string
+        image_date = self.ftp.sendcmd('MDTM ' + image) # get image last update date
+        image_date = int(image_date[3:]) #remove 213 response from string
         if image_date < date:
-            delete()
+            self.delete_file(image)
+            print("Deleted")
 
 

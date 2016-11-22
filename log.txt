@@ -2,7 +2,7 @@ Display Folder List['/Free4All/Camera/1', '/Free4All/Camera/Home', '/Free4All/Ca
  
  
  
- Time: Fri Nov 18 16:19:45 2016
+ Time: Tue Nov 22 14:03:06 2016
  
  
 Current Folder is: /Free4All/Camera/1
@@ -13,93 +13,17 @@ Current Folder is: /Free4All/Camera/Home
  Present Working directory: /Free4All/Camera/Home/20161102
  
  
+/Free4All/Camera/Home/20161102
 
  
  Present Working directory: /Free4All/Camera/Home/20161103
  
  
-
- 
- Present Working directory: /Free4All/Camera/Home/20161104
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161105
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161106
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161107
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161108
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161109
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161110
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161111
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161112
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161113
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161114
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161115
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161116
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161117
- 
- 
-
- 
- Present Working directory: /Free4All/Camera/Home/20161118
- 
- 
-Current Folder is: /Free4All/Camera/Pata
-Goooooool
-Nr of images in root: 1042Display Folder List['/Free4All/Camera/1', '/Free4All/Camera/Home', '/Free4All/Camera/Pata']
+Display Folder List['/Free4All/Camera/1', '/Free4All/Camera/Home', '/Free4All/Camera/Pata']
  
  
  
- Time: Fri Nov 18 16:21:42 2016
+ Time: Tue Nov 22 17:03:02 2016
  
  
 Current Folder is: /Free4All/Camera/1
@@ -110,103 +34,199 @@ Current Folder is: /Free4All/Camera/Home
  Present Working directory: /Free4All/Camera/Home/20161102
  
  
-/Free4All/Camera/Home/20161102/DCS-930L2016110221472501.jpg
+/Free4All/Camera/Home/20161102/DCS-930L2016110221472601.jpg
 
  
  Present Working directory: /Free4All/Camera/Home/20161103
  
  
-/Free4All/Camera/Home/20161103/DCS-930L2016110307201301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307211401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307211501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307431501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307431601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307431701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307431801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307431901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307432701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307432801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307432901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307433001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307485801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307485901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307490901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307491001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307491401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307491501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307491601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307491701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307515101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307515201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307515301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307554301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307554401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307554501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307555801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307555901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307560001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307565001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307565101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307565201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307565301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307570701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307570801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307570901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307571501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307571601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307571701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307571801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307571901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307572001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110307572101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308040401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308040501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308040601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308040701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308044101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308044201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308044301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308044401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308044501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308090101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308090201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308090301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308090401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308092601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308092701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308092801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308092901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308093101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308093201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308093301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308093401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308093501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308093601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308095401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308095501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308095601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308095701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308095801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308095901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308100501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308100601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308100701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308101401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308101501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308101601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308102401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308102501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308102601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308102901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308103901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308104901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308120901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121301.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308121701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308130401.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308130501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308130601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308132501.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308132601.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308132701.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308132801.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308132901.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308133001.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308133101.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308133201.jpg
+/Free4All/Camera/Home/20161103/DCS-930L2016110308133301.jpg
+Display Folder List['/Free4All/Camera/1', '/Free4All/Camera/Home', '/Free4All/Camera/Pata']
+ 
+ 
+ 
+ Time: Tue Nov 22 17:08:48 2016
+ 
+ 
+Current Folder is: /Free4All/Camera/1
+Goooooool
+Current Folder is: /Free4All/Camera/Home
+
+ 
+ Present Working directory: /Free4All/Camera/Home/20161102
+ 
+ 
+/Free4All/Camera/Home/20161102/DCS-930L2016110221472601.jpg
+Display Folder List['/Free4All/Camera/1', '/Free4All/Camera/Home', '/Free4All/Camera/Pata']
+ 
+ 
+ 
+ Time: Tue Nov 22 17:16:53 2016
+ 
+ 
+Current Folder is: /Free4All/Camera/1
+Goooooool
+Current Folder is: /Free4All/Camera/Home
+
+ 
+ Present Working directory: /Free4All/Camera/Home/20161102
+ 
+ 
+/Free4All/Camera/Home/20161102/DCS-930L2016110221472601.jpg
+Display Folder List['/Free4All/Camera/1', '/Free4All/Camera/Home', '/Free4All/Camera/Pata']
+ 
+ 
+ 
+ Time: Tue Nov 22 17:26:43 2016
+ 
+ 
+Current Folder is: /Free4All/Camera/1
+Goooooool
+Current Folder is: /Free4All/Camera/Home
+
+ 
+ Present Working directory: /Free4All/Camera/Home/20161102
+ 
+ 
+/Free4All/Camera/Home/20161102/DCS-930L2016110221472601.jpg
+
+ 
+ Present Working directory: /Free4All/Camera/Home/20161103
+ 
+ 
+/Free4All/Camera/Home/20161103/DCS-930L2016110307211401.jpg
 
  
  Present Working directory: /Free4All/Camera/Home/20161104
  
  
 /Free4All/Camera/Home/20161104/DCS-930L2016110407461701.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161105
- 
- 
-/Free4All/Camera/Home/20161105/DCS-930L2016110507170401.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161106
- 
- 
-/Free4All/Camera/Home/20161106/DCS-930L2016110609353001.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161107
- 
- 
-/Free4All/Camera/Home/20161107/DCS-930L2016110707233901.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161108
- 
- 
-/Free4All/Camera/Home/20161108/DCS-930L2016110807232701.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161109
- 
- 
-/Free4All/Camera/Home/20161109/DCS-930L2016110907435601.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161110
- 
- 
-/Free4All/Camera/Home/20161110/DCS-930L2016111008043801.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161111
- 
- 
-/Free4All/Camera/Home/20161111/DCS-930L2016111107502001.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161112
- 
- 
-/Free4All/Camera/Home/20161112/DCS-930L2016111207091501.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161113
- 
- 
-/Free4All/Camera/Home/20161113/DCS-930L2016111300002801.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161114
- 
- 
-/Free4All/Camera/Home/20161114/DCS-930L2016111407250901.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161115
- 
- 
-/Free4All/Camera/Home/20161115/DCS-930L2016111507582901.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161116
- 
- 
-/Free4All/Camera/Home/20161116/DCS-930L2016111607273201.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161117
- 
- 
-/Free4All/Camera/Home/20161117/DCS-930L2016111707225401.jpg
-
- 
- Present Working directory: /Free4All/Camera/Home/20161118
- 
- 
-/Free4All/Camera/Home/20161118/DCS-930L2016111808242501.jpg
-Current Folder is: /Free4All/Camera/Pata
-Goooooool
-Nr of images in root: 1042
