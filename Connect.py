@@ -26,7 +26,6 @@ runner.browse_files()
 # Go go through  all folders from "cam_folder_list"
 for List in cam_folder_list:
     ftp.cwd(List)
-
     #print("Current Folder is: " + str(ftp.pwd()))
     log.write("Current Folder is: " + str(ftp.pwd()) + "\n")
     # If Folder is empty Print Else
