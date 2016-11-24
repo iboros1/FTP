@@ -22,10 +22,11 @@ log.write("\n \n \n \n ")
 log.write("Time: " + time.strftime("%c") + "\n \n \n")
 
 now = time.time()
-
+runner.browse_files()
 # Go go through  all folders from "cam_folder_list"
 for List in cam_folder_list:
     ftp.cwd(List)
+
     #print("Current Folder is: " + str(ftp.pwd()))
     log.write("Current Folder is: " + str(ftp.pwd()) + "\n")
     # If Folder is empty Print Else
@@ -34,15 +35,23 @@ for List in cam_folder_list:
         for sub_List in x:
             try:
                 ftp.cwd(sub_List)
-                #print(ftp.pwd())
+                print(ftp.pwd())
                 log.write("\n \n " + "Present Working directory: " + str(ftp.pwd()) + "\n \n \n")
-                #print(ftp.retrlines('LIST'))
+                print(ftp.retrlines('LIST'))
                 for image in ftp.nlst():
-                    log.write(image + "\n")
-                    runner.older_file_delete(image)
+                   log.write(image + "\n")
+                   runner.older_file_delete(image)
 
             except:
                 nr_of_images_in_root += 1
+                ftp.cwd("../")
+                for List in cam_folder_list:
+                    ftp.cwd(List)
+                    x = ftp.nlst()
+                    if x != []:
+                        for image in ftp.nlst():
+                            log.write(image + "\n")
+                            runner.older_file_delete(image)
     else:
         log.write("Goooooool" + "\n")
 

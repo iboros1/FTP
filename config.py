@@ -18,4 +18,4 @@ CameraRoot = '/Free4All/Camera/'
 
 # [Delete files older then ]
 
-DDay = 20
+DDay = 44
