@@ -15,7 +15,7 @@ image_date = ftp.sendcmd('MDTM ' + 'DCS-930L2016110221472501.jpg')
 image_date = int(image_date[3:])
 print(image_date)
 print(date)
-if image_date > date:
+if image_date < date:
         print("time")
 
 ftp.close()
