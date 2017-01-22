@@ -8,7 +8,7 @@ from pip._vendor.distlib.compat import raw_input
 # [Login Info]
 
 Port = 'Default'
-Host = 'boros.ddns.net'
+Host = 'iboros.asuscomm.com'
 User = raw_input('User:')
 Password = raw_input('Password:')
 
@@ -18,4 +18,4 @@ CameraRoot = '/Free4All/Camera/'
 
 # [Delete files older then ]
 
-DDay = 44
+DDay = 30

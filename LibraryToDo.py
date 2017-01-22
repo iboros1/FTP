@@ -24,11 +24,12 @@ class RunFtp:
 
     # Delete files
     def delete_file(self, target):
-        self.ftp.delete(target)
+        # self.ftp.delete(target)
+        pass
 
     # Get file last update date and  gompare with date if older delete
     def older_file_delete(self, image):
-        # Delete Filers older then "DDay" from Config.py
+        # Delete Files older then "DDay" from Config.py
         date = datetime.datetime.now() - datetime.timedelta(days=DDay)
         # format date to yyyymmddhhmmss %02 is used to display leading 0
         date = int('%s%02d%02d%02d%02d%02d' % (date.year, date.month, date.day, date.hour, date.minute, date.second))
@@ -40,11 +41,19 @@ class RunFtp:
             image_date = self.ftp.sendcmd('MDTM ' + image)
         image_date = int(image_date[3:])  # remove 213 response from string
         # if image older log to file and Delete else only log to file
+        self.folder()
         if image_date < date:
             self.delete_file(image)
             self.log_deleted_files(image)
         else:
             self.log_remaining_files(image)
+
+
+    def folder(self, date):
+        date_folder = int('%s%02d%02d' % (date.year, date.month, date.day))
+        if self.ftp.pwd() > date_folder:
+            pass
+
 
     # Log deleted filename to log_delete.txt
     @staticmethod
@@ -57,8 +66,8 @@ class RunFtp:
     @staticmethod
     def log_remaining_files(image):
         log = open('log.txt', 'a')  # When "a" Append to log.txt
-        log.write("\n \n \n \n ")
-        log.write("Time: " + time.strftime("%c") + "\n \n \n")
+        log.write(" \n ")
+        log.write("Time: " + time.strftime("%c") + "\n")
         log.write("Image on server:" + image + "\n")
         log.close()
 
@@ -68,6 +77,7 @@ class RunFtp:
             basename = os.path.basename(List)
             if basename.endswith('.jpg'):
                 self.older_file_delete(basename)
+                self.ftp.sendcmd
             else:
                 self.ftp.cwd(List)
                 self.browse_files()
