@@ -10,7 +10,10 @@ class RunFtp:
 
     # login to given ftp server
     def login(self):
-        self.ftp = FTP(host=Host, user=User, passwd=Password, timeout=20)  # connect to host, default port
+        self.ftp = FTP()  # connect to host, default port
+        self.ftp.connect(host=Host,port=Port, timeout=20)
+        self.ftp.sendcmd('User %' %User)
+        self.ftp.sendcmd('Pass %' %Password)
         print('Current ip is ' + Host + ':' + Port + "\n" + self.ftp.getwelcome())
         self.ftp.retrlines('LIST')  # list directory contents
 
@@ -24,8 +27,8 @@ class RunFtp:
 
     # Delete files
     def delete_file(self, target):
-        # self.ftp.delete(target)
-        pass
+        self.ftp.delete(target)
+
 
     # Get file last update date and  gompare with date if older delete
     def older_file_delete(self, image):
@@ -41,23 +44,23 @@ class RunFtp:
             image_date = self.ftp.sendcmd('MDTM ' + image)
         image_date = int(image_date[3:])  # remove 213 response from string
         # if image older log to file and Delete else only log to file
-        self.folder()
+
         if image_date < date:
             self.delete_file(image)
             self.log_deleted_files(image)
         else:
             self.log_remaining_files(image)
 
+    def folder(self):
+        if self.ftp.pwd() == '/Free4All/Camera/Home' or self.ftp.pwd() == '/Free4All/Camera/Home1':
+            for folder in self.ftp.nlst():
 
-    def folder(self, date):
-        date_folder = int('%s%02d%02d' % (date.year, date.month, date.day))
-        if self.ftp.pwd() > date_folder:
-            pass
-
+                if self.ftp.nlst(folder) == [] and "Home" in self.ftp.pwd():
+                    print("empty and will be deleted" + folder)
+                    self.ftp.rmd(folder)
 
     # Log deleted filename to log_delete.txt
-    @staticmethod
-    def log_deleted_files(image):
+    def log_deleted_files(self, image):
         log = open('log_deleted.txt', 'a')  # When "a" Append to log
         log.write("Deleted image:" + image + "\n")
         log.close()
@@ -79,5 +82,6 @@ class RunFtp:
                 self.older_file_delete(basename)
                 self.ftp.sendcmd
             else:
+                self.folder()
                 self.ftp.cwd(List)
                 self.browse_files()
