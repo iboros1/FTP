@@ -7,7 +7,7 @@ from pip._vendor.distlib.compat import raw_input
 
 # [Login Info]
 
-Port = 'Default'
+Port = 22
 Host = 'iboros.asuscomm.com'
 User = raw_input('User:')
 Password = raw_input('Password:')
