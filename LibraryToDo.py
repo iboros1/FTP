@@ -12,7 +12,7 @@ class RunFtp:
     def login(self):
         self.ftp = FTP()  # connect to host, default port
         self.ftp.connect(host=Host,port=Port, timeout=20)
-        self.ftp.sendcmd('User %' %User)
+        self.ftp.sendcmd('User %s' % User)
         self.ftp.sendcmd('Pass %' %Password)
         print('Current ip is ' + Host + ':' + Port + "\n" + self.ftp.getwelcome())
         self.ftp.retrlines('LIST')  # list directory contents
