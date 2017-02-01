@@ -11,10 +11,10 @@ class RunFtp:
     # login to given ftp server
     def login(self):
         self.ftp = FTP()  # connect to host, default port
-        self.ftp.connect(host=Host,port=Port, timeout=20)
-        self.ftp.sendcmd('User %' %User)
-        self.ftp.sendcmd('Pass %' %Password)
-        print('Current ip is ' + Host + ':' + Port + "\n" + self.ftp.getwelcome())
+        self.ftp.connect(host=Host, port=Port, timeout=20)
+        self.ftp.sendcmd('User %s' % User)
+        self.ftp.sendcmd('Pass %s' % Password)
+        print('Current ip is ' + Host + ':' + str(Port) + "\n" + self.ftp.getwelcome())
         self.ftp.retrlines('LIST')  # list directory contents
 
     # get ftp server
@@ -76,12 +76,14 @@ class RunFtp:
 
     # Browse all folders and files if ends with .jpg check if old else restart from top
     def browse_files(self):
-        for List in self.get_current_folders_list():
+        Folder_list = self.get_current_folders_list()
+        for List in Folder_list:
             basename = os.path.basename(List)
-            if basename.endswith('.jpg'):
-                self.older_file_delete(basename)
-                self.ftp.sendcmd
-            else:
-                self.folder()
-                self.ftp.cwd(List)
-                self.browse_files()
+            if basename.isalpha():
+                if basename.endswith('.jpg'):
+                    self.older_file_delete(basename)
+                else:
+                    self.ftp.cwd(List)
+                    self.browse_files()
+                    self.folder()
+

@@ -7,13 +7,13 @@ from pip._vendor.distlib.compat import raw_input
 
 # [Login Info]
 
-Port = 22
-Host = 'iboros.asuscomm.com'
+Port =21
+Host = 'ftp.iboros.ro'
 User = raw_input('User:')
 Password = raw_input('Password:')
 
 # [Folder List]
-CameraRoot = '/Free4All/Camera/'
+CameraRoot = '/Camera/'
 
 
 # [Delete files older then ]
