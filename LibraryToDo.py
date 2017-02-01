@@ -76,8 +76,8 @@ class RunFtp:
 
     # Browse all folders and files if ends with .jpg check if old else restart from top
     def browse_files(self):
-        Folder_list = self.get_current_folders_list()
-        for List in Folder_list:
+
+        for List in self.get_current_folders_list():
             basename = os.path.basename(List)
             if basename.isalpha():
                 if basename.endswith('.jpg'):
