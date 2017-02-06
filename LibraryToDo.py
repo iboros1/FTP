@@ -76,14 +76,22 @@ class RunFtp:
 
     # Browse all folders and files if ends with .jpg check if old else restart from top
     def browse_files(self):
-
-        for List in self.get_current_folders_list():
-            basename = os.path.basename(List)
-            if basename.isalpha():
+        Folder_list = self.get_current_folders_list()
+        try:
+            Folder_list.remove(".")
+            Folder_list.remove("..")
+        except:
+            pass
+        else:
+            for List in Folder_list:
+                basename = os.path.basename(List)
                 if basename.endswith('.jpg'):
                     self.older_file_delete(basename)
                 else:
-                    self.ftp.cwd(List)
-                    self.browse_files()
-                    self.folder()
+                    try:
+                        self.ftp.cwd(List)
+                    except:
+                        self.ftp.cwd(".")
+                        self.browse_files()
+                        self.folder()
 
