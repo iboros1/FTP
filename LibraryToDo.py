@@ -51,11 +51,11 @@ class RunFtp:
         else:
             self.log_remaining_files(image)
 
-    def folder(self):
-        if self.ftp.pwd() == '/Free4All/Camera/Home' or self.ftp.pwd() == '/Free4All/Camera/Home1':
+    def folder_delete(self):
+        if self.ftp.pwd() == '/Camera/Home' or self.ftp.pwd() == '/Camera/HomeO':
             for folder in self.ftp.nlst():
 
-                if self.ftp.nlst(folder) == [] and "Home" in self.ftp.pwd():
+                if self.ftp.nlst(folder) == ['.','..']:
                     print("empty and will be deleted" + folder)
                     self.ftp.rmd(folder)
 
@@ -91,7 +91,8 @@ class RunFtp:
                     try:
                         self.ftp.cwd(List)
                     except:
+                        self.folder_delete()
                         self.ftp.cwd(".")
                         self.browse_files()
-                        self.folder()
+
 
