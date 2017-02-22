@@ -80,7 +80,7 @@ class RunFtp:
         try:
             Folder_list.remove(".")
             Folder_list.remove("..")
-        except:
+        except ValueError:
             pass
         else:
             for List in Folder_list:
@@ -90,9 +90,13 @@ class RunFtp:
                 else:
                     try:
                         self.ftp.cwd(List)
-                    except:
+                        self.browse_files()
+                    except ValueError:
+                        pass
+                    else:
                         self.folder_delete()
                         self.ftp.cwd(".")
                         self.browse_files()
+
 
 
