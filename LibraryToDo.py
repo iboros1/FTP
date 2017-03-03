@@ -7,6 +7,7 @@ import os
 class RunFtp:
     def __init__(self):
         self.ftp = None
+        self.root_folers = []
 
     # login to given ftp server
     def login(self):
@@ -16,6 +17,7 @@ class RunFtp:
         self.ftp.sendcmd('Pass %s' % Password)
         print('Current ip is ' + Host + ':' + str(Port) + "\n" + self.ftp.getwelcome())
         self.ftp.retrlines('LIST')  # list directory contents
+        self.root_folers = self.ftp.nlst()
 
     # get ftp server
     def get_ftp_connection(self):
@@ -74,9 +76,43 @@ class RunFtp:
         log.write("Image on server:" + image + "\n")
         log.close()
 
+    def main_folders(self):
+        main_folder = self.ftp.nlst()
+        self.clear_dot(main_folder)
+        return main_folder
+
+
+
     # Browse all folders and files if ends with .jpg check if old else restart from top
+    def all_folders(self):
+        main_folder = self.main_folders()
+        sub_folders=[]
+
+        try:
+
+            self.ftp.cwd(main_folder[0])
+            main_folder.pop(0)
+            sub_folders = self.get_current_folders_list()
+            self.clear_dot(sub_folders)
+        except ValueError:
+            pass
+        for items in sub_folders:
+            basename = os.path.basename(items)
+            if basename.endswith('.jpg'):
+                self.older_file_delete(basename)
+            else:
+                try:
+                    self.ftp.cwd(items)
+                    sub_folders.pop(0)
+                except ValueError:
+                    pass
+                else:
+                    #self.ftp.cwd(main_folder)
+                    self.all_folders()
+
     def browse_files(self):
         Folder_list = self.get_current_folders_list()
+        parent_dir = self.ftp.pwd()
         try:
             Folder_list.remove(".")
             Folder_list.remove("..")
@@ -90,13 +126,16 @@ class RunFtp:
                 else:
                     try:
                         self.ftp.cwd(List)
+                        Folder_list.pop(0)
+                        self.folder_delete()
                         self.browse_files()
                     except ValueError:
                         pass
                     else:
-                        self.folder_delete()
-                        self.ftp.cwd(".")
+                        self.ftp.cwd(parent_dir)
                         self.browse_files()
 
-
-
+    @staticmethod
+    def clear_dot(location):
+        location.remove(".")
+        location.remove("..")
