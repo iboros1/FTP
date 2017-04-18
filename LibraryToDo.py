@@ -18,6 +18,7 @@ class RunFtp:
         print('Current ip is ' + Host + ':' + str(Port) + "\n" + self.ftp.getwelcome())
         self.ftp.retrlines('LIST')  # list directory contents
         self.root_folers = self.ftp.nlst()
+        self.clear_dot(self.root_folers)
 
     # get ftp server
     def get_ftp_connection(self):
@@ -81,34 +82,27 @@ class RunFtp:
         self.clear_dot(main_folder)
         return main_folder
 
-
-
     # Browse all folders and files if ends with .jpg check if old else restart from top
     def all_folders(self):
         main_folder = self.main_folders()
-        sub_folders=[]
-
+        sacreficee_list = []
+        sub_folders = []
+        for home_sub in main_folder:
+            sacreficee_list.append(home_sub)
+        print(sacreficee_list)
         try:
-
-            self.ftp.cwd(main_folder[0])
-            main_folder.pop(0)
-            sub_folders = self.get_current_folders_list()
+            self.ftp.cwd(sacreficee_list[0])
+            sacreficee_list.remove(sacreficee_list[0])
+            sub_folders = self.ftp.nlst()
             self.clear_dot(sub_folders)
-        except ValueError:
+        except IndexError:
             pass
-        for items in sub_folders:
-            basename = os.path.basename(items)
-            if basename.endswith('.jpg'):
-                self.older_file_delete(basename)
-            else:
-                try:
-                    self.ftp.cwd(items)
-                    sub_folders.pop(0)
-                except ValueError:
-                    pass
-                else:
-                    #self.ftp.cwd(main_folder)
-                    self.all_folders()
+
+
+
+
+
+
 
     def browse_files(self):
         Folder_list = self.get_current_folders_list()
@@ -134,6 +128,28 @@ class RunFtp:
                     else:
                         self.ftp.cwd(parent_dir)
                         self.browse_files()
+
+    def go_to_folder(self):
+        try:
+
+            self.ftp.cwd(self.root_folers[0])
+            sub_folders = self.get_current_folders_list()
+            self.clear_dot(sub_folders)
+        except ValueError:
+            pass
+        for items in sub_folders:
+            basename = os.path.basename(items)
+            if basename.endswith('.jpg'):
+                self.older_file_delete(basename)
+            else:
+                try:
+                    self.ftp.cwd(items)
+                    sub_folders.pop(0)
+                except ValueError:
+                    pass
+                else:
+                    # self.ftp.cwd(main_folder)
+                    self.all_folders()
 
     @staticmethod
     def clear_dot(location):
