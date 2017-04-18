@@ -9,9 +9,10 @@ from pip._vendor.distlib.compat import raw_input
 
 Port =21
 Host = 'ftp.iboros.ro'
-User = raw_input('User:')
-Password = raw_input('Password:')
-
+# User = input('User:')
+# Password = input('Password:')
+User = open('/Users/istvan.boros/Desktop/ftpu', 'r').readline()
+Password = open('/Users/istvan.boros/Desktop/ftpp', 'r').readline()
 # [Folder List]
 CameraRoot = '/Camera/'
 
