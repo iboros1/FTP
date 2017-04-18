@@ -77,7 +77,7 @@ class RunFtp:
         log.close()
 
     def main_folders(self):
-        main_folder = self.ftp.nlst()
+        main_folder = self.root_folers
         self.clear_dot(main_folder)
         return main_folder
 
@@ -135,7 +135,15 @@ class RunFtp:
                         self.ftp.cwd(parent_dir)
                         self.browse_files()
 
+    def folsers_run(self):
+        main_folder = self.ftp.nlst()
+        main_folder = self.clear_dot(main_folder)
+        print(main_folder)
+
+
     @staticmethod
     def clear_dot(location):
-        location.remove(".")
-        location.remove("..")
+        for r in range(len(location)):
+            if "." in location[r][0]:
+                location.pop(r)
+
