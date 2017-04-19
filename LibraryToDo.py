@@ -93,8 +93,9 @@ class RunFtp:
                 return elem
 
     def folder_do(self):
-        self.ftp.cwd(self.folder_brows())
-        pos = self.get_current_folders_list()
+        if self.folder_brows() is not None:
+            self.ftp.cwd(self.folder_brows())
+            pos = self.get_current_folders_list()
         for sub_fol in pos:
             if sub_fol.endswith('.jpg'):
                 self.older_file_delete
