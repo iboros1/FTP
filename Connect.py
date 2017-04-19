@@ -11,9 +11,11 @@ ftp = runner.get_ftp_connection()
 ftp.cwd(CameraRoot)
 
 #Go troth all the files
+runner.main_folders()
+runner.get_current_folders_list()
 # runner.all_folders()
 #runner.browse_files()
-runner.folsers_run()
+runner.folder_do()
 
 
 
