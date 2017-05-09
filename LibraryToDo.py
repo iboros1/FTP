@@ -62,7 +62,7 @@ class RunFtp:
 
     def folder_delete(self, folder):
                 if self.ftp.nlst(folder) == ['.', '..']:
-                    print("empty and will be deleted" + folder)
+                    print("empty and will be deleted " + folder)
                     self.ftp.rmd(folder)
 
     # Log deleted filename to log_delete.txt
@@ -106,7 +106,6 @@ class RunFtp:
                             if image.endswith('.jpg'):
                                 image = str(temp) + '/' + str(image)
                                 self.older_file_delete(image)
-                                self.folder_delete(temp)
                             else:
                                 self.folder_delete(temp)
                         #sub_folder = self.clear_dot(self.ftp.nlst(item))
