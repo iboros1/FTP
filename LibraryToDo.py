@@ -94,15 +94,15 @@ class RunFtp:
             if sub_folder.endswith('.jpg'):
                 self.older_file_delete(image)
             else:
-                w2 = self.clear_dot(self.ftp.nlst(sub_folder))
-                for item in w2:
+                t1 = self.clear_dot(self.ftp.nlst(sub_folder))
+                for item in t1:
                     if item.endswith('.jpg'):
                         self.older_file_delete(image)
                     else:
                         temp = str(sub_folder) + "/" + str(item)
-                        w3 = self.clear_dot(self.ftp.nlst(temp))
+                        t2 = self.clear_dot(self.ftp.nlst(temp))
                         self.folder_delete(temp)
-                        for image in w3:
+                        for image in t2:
                             if image.endswith('.jpg'):
                                 image = str(temp) + '/' + str(image)
                                 self.older_file_delete(image)
