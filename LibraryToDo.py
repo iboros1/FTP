@@ -1,4 +1,4 @@
-from config import (Host, User, Password, Port, DDay)
+from config import (Host, User, Password, Port, DDay, CameraRoot)
 from ftplib import FTP, error_perm
 import datetime, time
 import os
@@ -17,7 +17,7 @@ class RunFtp:
         self.ftp.sendcmd('Pass %s' % Password)
         print('Current ip is ' + Host + ':' + str(Port) + "\n" + self.ftp.getwelcome())
         self.ftp.retrlines('LIST')  # list directory contents
-        self.root_folers = self.ftp.nlst()
+
 
     # get ftp server
     def get_ftp_connection(self):
@@ -93,15 +93,19 @@ class RunFtp:
                 return elem
 
     def folder_do(self):
-        if self.folder_brows() is not None:
-            self.ftp.cwd(self.folder_brows())
-            pos = self.get_current_folders_list()
-        for sub_fol in pos:
-            if sub_fol.endswith('.jpg'):
+        for sub_folder in self.clear_dot(self.ftp.nlst()):
+            if sub_folder.endswith('.jpg'):
                 self.older_file_delete
             else:
-                self.ftp.cwd(sub_fol)
-                self.folder_do()
+                sub_folder = self.clear_dot(self.ftp.nlst(sub_folder))
+                for item in sub_folder:
+                    if item.endswith('.jpg'):
+                        self.older_file_delete
+                    else:
+                        sub_folder = self.clear_dot(self.ftp.nlst(item))
+
+
+
 
     # Browse all folders and files if ends with .jpg check if old else restart from top
     # def all_folders(self):
