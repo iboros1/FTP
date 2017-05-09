@@ -21,4 +21,4 @@ CameraRoot = '/Camera/'
 
 # [Delete files older then ]
 
-DDay = 30
+DDay = 5

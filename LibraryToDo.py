@@ -45,11 +45,11 @@ class RunFtp:
         date = datetime.datetime.now() - datetime.timedelta(days=DDay)
         # format date to yyyymmddhhmmss %02 is used to display leading 0
         date = int('%s%02d%02d%02d%02d%02d' % (date.year, date.month, date.day, date.hour, date.minute, date.second))
-        image = os.path.basename(image)  # Remove folders from string
+        #image = os.path.basename(image)  # Remove folders from string
         try:
             image_date = self.ftp.sendcmd('MDTM ' + image)  # get image last update date
         except error_perm:
-            self.ftp.cwd('../')
+            #self.ftp.cwd('../')
             image_date = self.ftp.sendcmd('MDTM ' + image)
         image_date = int(image_date[3:])  # remove 213 response from string
         # if image older log to file and Delete else only log to file
@@ -60,10 +60,7 @@ class RunFtp:
         else:
             self.log_remaining_files(image)
 
-    def folder_delete(self):
-        if self.ftp.pwd() == '/Camera/Home' or self.ftp.pwd() == '/Camera/HomeO':
-            for folder in self.ftp.nlst():
-
+    def folder_delete(self, folder):
                 if self.ftp.nlst(folder) == ['.', '..']:
                     print("empty and will be deleted" + folder)
                     self.ftp.rmd(folder)
@@ -95,14 +92,24 @@ class RunFtp:
     def folder_do(self):
         for sub_folder in self.clear_dot(self.ftp.nlst()):
             if sub_folder.endswith('.jpg'):
-                self.older_file_delete
+                self.older_file_delete(image)
             else:
-                sub_folder = self.clear_dot(self.ftp.nlst(sub_folder))
-                for item in sub_folder:
+                w2 = self.clear_dot(self.ftp.nlst(sub_folder))
+                for item in w2:
                     if item.endswith('.jpg'):
-                        self.older_file_delete
+                        self.older_file_delete(image)
                     else:
-                        sub_folder = self.clear_dot(self.ftp.nlst(item))
+                        temp = str(sub_folder) + "/" + str(item)
+                        w3 = self.clear_dot(self.ftp.nlst(temp))
+                        self.folder_delete(temp)
+                        for image in w3:
+                            if image.endswith('.jpg'):
+                                image = str(temp) + '/' + str(image)
+                                self.older_file_delete(image)
+                                self.folder_delete(temp)
+                            else:
+                                self.folder_delete(temp)
+                        #sub_folder = self.clear_dot(self.ftp.nlst(item))
 
 
 
